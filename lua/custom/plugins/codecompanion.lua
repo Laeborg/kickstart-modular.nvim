@@ -7,6 +7,7 @@ return {
     },
     config = function()
       require('codecompanion').setup {
+        adapter = 'anthropic',
         adapters = {
           anthropic = function()
             return require('codecompanion.adapters').extend('anthropic', {
@@ -15,6 +16,14 @@ return {
               },
             })
           end,
+        },
+        strategies = {
+          chat = {
+            adapter = 'anthropic',
+          },
+          inline = {
+            adapter = 'anthropic',
+          },
         },
       }
     end,
